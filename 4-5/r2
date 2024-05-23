@@ -1,0 +1,12 @@
+===SERVER===
+~/OSIDZ4$ ./s 8080 f2
+All packages are coded!
+RESULT:
+
+~/OSIDZ4$ 
+
+===CLIENT===
+~/OSIDZ4$ ./c 127.0.0.1 8080
+MY PID = 983
+^C
+~/OSIDZ4$ 
