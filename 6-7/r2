@@ -1,0 +1,18 @@
+===SERVER===
+~/OSIDZ4/6-7$ ./s 9000 f2 255.255.255.255 9001
+All packages are coded!
+RESULT:
+
+~/OSIDZ4/6-7$ 
+
+===CLIENT===
+~/OSIDZ4/6-7$ ./c 127.0.0.1 9000 255.255.255.255 9001
+MY PID = 818
+^CEXIT!
+~/OSIDZ4/6-7$ 
+
+===CLIENT===
+^C~/OSIDZ4/6-7$ ./l 9001
+RESULT:
+
+^C~/OSIDZ4/6-7$

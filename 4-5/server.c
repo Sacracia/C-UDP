@@ -65,13 +65,13 @@ int main(int argc, char* argv[]) {
   }
 
   //READ INPUT STRING
-  FILE* f = fopen(argv[2], "r");
-  if (f == NULL) {
+  int f = open(argv[2], O_RDONLY);
+  if (f < 0) {
     printf("File not found!\n");
     exit(0);
   }
-  char* tmp = fgets(str, 1000, f);
-  fclose(f);
+  int read_bytes = read(f, str, sizeof(str));
+  close(f);
 
   signal(SIGINT, EXIT);
   HandleString();

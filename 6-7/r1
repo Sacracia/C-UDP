@@ -1,0 +1,66 @@
+===SERVER===
+~/OSIDZ4/6-7$ ./s 9000 f1 255.255.255.255 9001
+Server: sending pkg with 'H' 'e'
+Server: after process 697 coded 'H' 'e':
+0x48 0x65 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'l' 'l'
+Server: after process 697 coded 'l' 'l':
+0x48 0x65 0x6c 0x6c ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'o' ' '
+Server: after process 697 coded 'o' ' ':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'w' 'o'
+Server: after process 697 coded 'w' 'o':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f ?? ?? ?? ?? 
+Server: sending pkg with 'r' 'l'
+Server: after process 697 coded 'r' 'l':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c ?? ?? 
+Server: sending pkg with 'd' '!'
+Server: after process 697 coded 'd' '!':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+All packages are coded!
+RESULT:
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+~/OSIDZ4/6-7$ 
+
+===CLIENT===
+~/OSIDZ4/6-7$ ./c 127.0.0.1 9000 255.255.255.255 9001
+MY PID = 697
+Clinet 697: coded 'H' 'e'
+Clinet 697: coded 'l' 'l'
+Clinet 697: coded 'o' ' '
+Clinet 697: coded 'w' 'o'
+Clinet 697: coded 'r' 'l'
+Clinet 697: coded 'd' '!'
+^CEXIT!
+~/OSIDZ4/6-7$ 
+
+===LOGGER===
+~/OSIDZ4/6-7$ ./l 9001
+Server: sending pkg with 'H' 'e'
+Clinet 697: coded 'H' 'e'
+Server: after process 697 coded 'H' 'e':
+0x48 0x65 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'l' 'l'
+Clinet 697: coded 'l' 'l'
+Server: after process 697 coded 'l' 'l':
+0x48 0x65 0x6c 0x6c ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'o' ' '
+Clinet 697: coded 'o' ' '
+Server: after process 697 coded 'o' ' ':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'w' 'o'
+Clinet 697: coded 'w' 'o'
+Server: after process 697 coded 'w' 'o':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f ?? ?? ?? ?? 
+Server: sending pkg with 'r' 'l'
+Clinet 697: coded 'r' 'l'
+Server: after process 697 coded 'r' 'l':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c ?? ?? 
+Server: sending pkg with 'd' '!'
+Clinet 697: coded 'd' '!'
+Server: after process 697 coded 'd' '!':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+RESULT:
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+^C~/OSIDZ4/6-7$ 

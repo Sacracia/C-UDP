@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
             p.iscoded = 1;
             p.pid = getpid();
             memset(buf, 0, 5000);
-            sprintf(buf, "Clinet %d: coded \'%c\' \'%c\'\n", getpid(), p.c1, p.c2);
+            sprintf(buf, "Client %d: coded \'%c\' \'%c\'\n", getpid(), p.c1, p.c2);
             LOG(buf);
         }
         sleep(rand() % 2 + 1);

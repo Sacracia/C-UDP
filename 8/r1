@@ -1,0 +1,71 @@
+====SERVER====
+~/OSIDZ4/8$ ./s 9000 f1 255.255.255.255 9001
+Server: sending pkg with 'H' 'e'
+Server: after process 1782 coded 'H' 'e':
+0x48 0x65 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'l' 'l'
+Server: after process 1782 coded 'l' 'l':
+0x48 0x65 0x6c 0x6c ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'o' ' '
+Server: after process 1782 coded 'o' ' ':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'w' 'o'
+Server: after process 1782 coded 'w' 'o':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f ?? ?? ?? ?? 
+Server: sending pkg with 'r' 'l'
+Server: after process 1782 coded 'r' 'l':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c ?? ?? 
+Server: sending pkg with 'd' '!'
+Server: after process 1782 coded 'd' '!':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+All packages are coded!
+RESULT:
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+~/OSIDZ4/8$ 
+
+===CLIENT===
+~/OSIDZ4/8$ ./c 127.0.0.1 9000 255.255.255.255 9001
+MY PID = 1782
+Client 1782: coded 'H' 'e'
+Client 1782: coded 'l' 'l'
+Client 1782: coded 'o' ' '
+Client 1782: coded 'w' 'o'
+Client 1782: coded 'r' 'l'
+Client 1782: coded 'd' '!'
+^CEXIT!
+~/OSIDZ4/8$ 
+
+===LOGGER1===
+~/OSIDZ4/8$ ./l 9001
+Client 1782: coded 'H' 'e'
+Server: sending pkg with 'H' 'e'
+Server: after process 1782 coded 'H' 'e':
+0x48 0x65 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'l' 'l'
+Client 1782: coded 'l' 'l'
+^C~/OSIDZ4/8$ 
+
+===LOGGER2===
+~/OSIDZ4/8$ ./l 9001
+Server: after process 1782 coded 'l' 'l':
+0x48 0x65 0x6c 0x6c ?? ?? ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'o' ' '
+Client 1782: coded 'o' ' '
+Server: after process 1782 coded 'o' ' ':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 ?? ?? ?? ?? ?? ?? 
+Server: sending pkg with 'w' 'o'
+Client 1782: coded 'w' 'o'
+Server: after process 1782 coded 'w' 'o':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f ?? ?? ?? ?? 
+Server: sending pkg with 'r' 'l'
+Client 1782: coded 'r' 'l'
+Server: after process 1782 coded 'r' 'l':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c ?? ?? 
+Server: sending pkg with 'd' '!'
+Client 1782: coded 'd' '!'
+Server: after process 1782 coded 'd' '!':
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+RESULT:
+0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21 
+^C~/OSIDZ4/8$ 
+

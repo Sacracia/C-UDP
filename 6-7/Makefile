@@ -1,4 +1,4 @@
 compile:
-	gcc client.c -o client
-	gcc server.c -o server
-	gcc logger.c -o logger
+	gcc server.c -o s
+	gcc client.c -o c
+	gcc logger.c -o l
